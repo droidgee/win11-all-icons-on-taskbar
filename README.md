@@ -1,10 +1,9 @@
 # "Always show all icons and notifications on the taskbar" fix
 You no longer need to open "Settings > Personalization > Taskbar > Other system tray icons > [icon name] > Enable"
 
-##  EnableAutoTray and explorer shell:::{...} don't work
-It seems that in 24H2 Microsoft completely broke EnableAutoTray in the registry and control panel menu which can be opened using
-
-    explorer shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
+## Ukrainians continue to fight for their right to live.
+**You can help us by donating to <a href="https://savelife.in.ua/en/donate-en/#donate-army-card-monthly" target="_blank">International charity foundation Come Back Alive</a> to save the lives of millions of Ukrainians who are still experiencing the horrors of war and continue to fight to protect not only themselves but also the whole of Europe.**    
+*The organization does not use funds to purchase weapons. Its mission is solely to supply technology, training and ammunition to help save the lives of Ukrainians and help soldiers defend Ukraine.*
 
 ## How to install it?
 Click on the green **Code** button, then **Download ZIP**.    
@@ -13,6 +12,11 @@ Administrator privileges are **not** required.
 
 ## How to remove it?
 Run installer.bat again
+
+##  EnableAutoTray and explorer shell:::{...} don't work
+It seems that in 24H2 Microsoft completely broke EnableAutoTray in the registry and control panel menu which can be opened using
+
+    explorer shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
 
 ## How does it work?
 The installer moves the minified script to your user folder, hides it, and creates a special PowerShell shortcut in the startup folder that runs the script in the background.    
