@@ -16,7 +16,7 @@ Run installer.bat again
 
 ## How does it work?
 The installer moves the minified script to your user folder, hides it, and creates a special PowerShell shortcut in the startup folder that runs the script in the background.    
-Every 60 seconds, PowerShell enables ALL programs in the <a href="ms-settings:taskbar">taskbar settings</a>. So, if you install a new program, its icon will appear in the taskbar within 60 seconds. That is why the *Hidden icon menu* should always be enabled.
+Every 60 seconds, PowerShell enables ALL programs in the taskbar settings. So, if you install a new program, its icon will appear in the taskbar within 60 seconds. That is why the *Hidden icon menu* should always be enabled.
 
 
 ![Settings > Personalization > Taskbar > Other system tray icons > Hidden icon menu > Enable](images/icon-menu.png)
