@@ -1,5 +1,5 @@
 # "Always show all icons and notifications on the taskbar" fix
-You no longer need to open “Settings > Personalization > Taskbar > Other system tray icons > [icon name] > Enable”
+You no longer need to open "Settings > Personalization > Taskbar > Other system tray icons > [icon name] > Enable"
 
 ##  EnableAutoTray and explorer shell:::{...} don't work
 It seems that in 24H2 Microsoft completely broke EnableAutoTray in the registry and control panel menu which can be opened using
