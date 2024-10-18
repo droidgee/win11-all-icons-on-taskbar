@@ -13,7 +13,7 @@ while ($true) {
     }
     catch {
         $wshell = New-Object -ComObject Wscript.Shell
-        $wshell.Popup("[Show all icons and notifications on the taskbar]: An error occurred while scanning the registry for new programs.")
+        $wshell.Popup("[""Always show all icons and notifications on the taskbar"" fix by Liub0myr]: An error occurred while scanning the registry for new programs.")
         return 1
     }
     foreach ($key in $allIcons) { 
