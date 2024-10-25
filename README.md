@@ -14,7 +14,10 @@ Administrator privileges are **not** required.
 Run installer.bat again
 
 ## How to update to v2?
-Run install.bat to uninstall the old version, and then run it again to install this version
+Download the new version and run installer.bat 2 times:
+* to uninstall the old version
+* to install the new version
+
 
 ## EnableAutoTray and explorer shell:::{...} don't work
 It seems that in 24H2 Microsoft completely broke EnableAutoTray in the registry and control panel menu which can be opened using
@@ -32,4 +35,4 @@ Recommendation: don't disable the *Hidden Icon Menu* option so that you can noti
 When the script is in standby mode, it does **not** affect the CPU and requires only about 30 MB of RAM. When it is running (which is rare and takes less than a second), it uses **much less** than 1% of the CPU. To reduce the already tiny performance impact, a minified script is used and the process is assigned the lowest priority.
 
 ## Acknowledgment
-Aemony from Reddit for the idea of using a registry event trigger
+u/Aemony from Reddit for the idea of using a registry event trigger
