@@ -1,4 +1,4 @@
-# "Always show all icons and notifications on the taskbar" fix
+# "Always show all icons and notifications on the taskbar" fix v2
 You no longer need to open "Settings > Personalization > Taskbar > Other system tray icons > [icon name] > Enable"
 
 ## Ukrainians continue to fight for their right to live.
@@ -13,17 +13,23 @@ Administrator privileges are **not** required.
 ## How to remove it?
 Run installer.bat again
 
-##  EnableAutoTray and explorer shell:::{...} don't work
+## How to update to v2?
+Run install.bat to uninstall the old version, and then run it again to install this version
+
+## EnableAutoTray and explorer shell:::{...} don't work
 It seems that in 24H2 Microsoft completely broke EnableAutoTray in the registry and control panel menu which can be opened using
 
     explorer shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
 
 ## How does it work?
 The installer moves the minified script to your user folder, hides it, and creates a special PowerShell shortcut in the startup folder that runs the script in the background.    
-Every 60 seconds, PowerShell enables ALL programs in the taskbar settings. So, if you install a new program, its icon will appear in the taskbar within 60 seconds. That is why the *Hidden icon menu* should always be enabled.
+At startup, PowerShell asks Windows to notify it when the UI registers a new program and suspends itself. When the OS triggers it, the script enables ALL programs in the taskbar settings. However, enabling manually disabled programs in the settings can be avoided by changing one line of code (note that it is the minified version that is installed). By default, this is done to avoid problems if MS changes the algorithm for adding new programs.    
 
-
+Recommendation: don't disable the *Hidden Icon Menu* option so that you can notice that new programs aren't automatically added to the taskbar if MS manages to break this script
 ![Settings > Personalization > Taskbar > Other system tray icons > Hidden icon menu > Enable](images/icon-menu.png)
 
-# Does it affect PC performance?
-Theoretically, yes, but in practice it requires only about 30 MB of RAM and **much less** than 1% of the CPU. To reduce the already tiny performance impact, a minimized script is used and the process is assigned the lowest priority.
+## Does it affect PC performance?
+When the script is in standby mode, it does **not** affect the CPU and requires only about 30 MB of RAM. When it is running (which is rare and takes less than a second), it uses **much less** than 1% of the CPU. To reduce the already tiny performance impact, a minified script is used and the process is assigned the lowest priority.
+
+## Acknowledgment
+Aemony from Reddit for the idea of using a registry event trigger
