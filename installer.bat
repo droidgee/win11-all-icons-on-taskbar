@@ -1,6 +1,6 @@
 @echo off
 rem https://github.com/Liub0myr/win11-all-icons-on-taskbar
-title ^"Always show all icons and notifications on the taskbar^" fix by Liub0myr v2
+title ^"Always show all icons and notifications on the taskbar^" fix by Liub0myr v2.01
 color f
 if exist "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\all-icons-on-taskbar.lnk" (goto :remove)
 if exist "%userprofile%\all-icons-on-taskbar-min.ps1" (goto :remove)
@@ -9,6 +9,7 @@ copy /v all-icons-on-taskbar-min.ps1 "%userprofile%" > nul
 attrib +R +H "%userprofile%\all-icons-on-taskbar-min.ps1"
 cscript create_shortcut.vbs "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\all-icons-on-taskbar.lnk" "%windir%\System32\WindowsPowerShell\v1.0\powershell.exe" "-WindowStyle hidden -noprofile -NoExit -executionpolicy bypass -file %userprofile%\all-icons-on-taskbar-min.ps1" > nul
 start /min %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -noprofile -NoExit -executionpolicy bypass -file %userprofile%\all-icons-on-taskbar-min.ps1
+start /min %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -noprofile -executionpolicy bypass -file run-once-min.ps1
 echo Installation complete.
 echo Press any key to exit . . .
 pause > nul
