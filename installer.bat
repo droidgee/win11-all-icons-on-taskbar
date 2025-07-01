@@ -11,13 +11,14 @@ cscript create_shortcut.vbs "%appdata%\Microsoft\Windows\Start Menu\Programs\Sta
 start /min %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -noprofile -NoExit -executionpolicy bypass -file %userprofile%\all-icons-on-taskbar-min.ps1
 start /min %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -noprofile -executionpolicy bypass -file run-once-min.ps1
 echo Installation complete.
-echo Press any key to exit . . .
-pause > nul
+rem echo Press any key to exit . . .
+rem pause > nul
 exit /b
 
 :remove
 echo Removing...
 :remove-menu-powershell-ask
+goto :remove-powershell-stop-skip
 set choice=none
 echo Stop all PowerShell shells and WMI asynchronous callbacks processes ?
 echo 0. No ^(changes will take effect after logging out / restarting the computer^)
